@@ -57,10 +57,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CoreCLR-NCalc" Version="3.1.253" />
+		<PackageReference Include="Antlr4" Version="4.6.6">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Antlr4.Runtime" Version="4.6.6" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Antlr4 Update="Lab01.g4">
+	    <CustomToolNamespace>Lab01</CustomToolNamespace>
+	  </Antlr4>
 	</ItemGroup>
 
 </Project>

@@ -1,1 +1,1 @@
-D:\Uni\OOP\Lab01\Lab01.csproj;x64
+D:\Uni\2nd year\OOP\Lab01\Lab01.csproj;x64

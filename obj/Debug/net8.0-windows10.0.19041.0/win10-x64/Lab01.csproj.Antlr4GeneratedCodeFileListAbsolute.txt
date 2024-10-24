@@ -1,0 +1,6 @@
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Lab01Lexer.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Lab01Parser.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Lab01Listener.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Lab01BaseListener.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Lab01Visitor.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Lab01BaseVisitor.cs

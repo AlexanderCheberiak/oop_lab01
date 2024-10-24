@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Uni\\OOP\\Lab01\\Lab01.csproj": {}
+    "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.csproj": {}
   },
   "projects": {
-    "D:\\Uni\\OOP\\Lab01\\Lab01.csproj": {
+    "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Uni\\OOP\\Lab01\\Lab01.csproj",
+        "projectUniqueName": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.csproj",
         "projectName": "Lab01",
-        "projectPath": "D:\\Uni\\OOP\\Lab01\\Lab01.csproj",
+        "projectPath": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.csproj",
         "packagesPath": "C:\\Users\\Sasha\\.nuget\\packages\\",
-        "outputPath": "D:\\Uni\\OOP\\Lab01\\obj\\",
+        "outputPath": "D:\\Uni\\2nd year\\OOP\\Lab01\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -38,11 +38,11 @@
             "targetAlias": "net8.0-android",
             "projectReferences": {}
           },
-          "net8.0-ios17.5": {
+          "net8.0-ios18.0": {
             "targetAlias": "net8.0-ios",
             "projectReferences": {}
           },
-          "net8.0-maccatalyst17.5": {
+          "net8.0-maccatalyst18.0": {
             "targetAlias": "net8.0-maccatalyst",
             "projectReferences": {}
           },
@@ -66,9 +66,15 @@
         "net8.0-android34.0": {
           "targetAlias": "net8.0-android",
           "dependencies": {
-            "CoreCLR-NCalc": {
+            "Antlr4": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.253, )"
+              "version": "[4.6.6, )"
+            },
+            "Antlr4.Runtime": {
+              "target": "Package",
+              "version": "[4.6.6, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -76,16 +82,16 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.72, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.72, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.8, )",
+              "version": "[8.0.10, )",
               "autoReferenced": true
             }
           },
@@ -108,14 +114,20 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         },
-        "net8.0-ios17.5": {
+        "net8.0-ios18.0": {
           "targetAlias": "net8.0-ios",
           "dependencies": {
-            "CoreCLR-NCalc": {
+            "Antlr4": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.253, )"
+              "version": "[4.6.6, )"
+            },
+            "Antlr4.Runtime": {
+              "target": "Package",
+              "version": "[4.6.6, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -123,16 +135,16 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.72, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.72, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.8, )",
+              "version": "[8.0.10, )",
               "autoReferenced": true
             }
           },
@@ -155,14 +167,20 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         },
-        "net8.0-maccatalyst17.5": {
+        "net8.0-maccatalyst18.0": {
           "targetAlias": "net8.0-maccatalyst",
           "dependencies": {
-            "CoreCLR-NCalc": {
+            "Antlr4": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.253, )"
+              "version": "[4.6.6, )"
+            },
+            "Antlr4.Runtime": {
+              "target": "Package",
+              "version": "[4.6.6, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -170,16 +188,16 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.72, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.72, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.8, )",
+              "version": "[8.0.10, )",
               "autoReferenced": true
             }
           },
@@ -203,14 +221,20 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         },
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
           "dependencies": {
-            "CoreCLR-NCalc": {
+            "Antlr4": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.253, )"
+              "version": "[4.6.6, )"
+            },
+            "Antlr4.Runtime": {
+              "target": "Package",
+              "version": "[4.6.6, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -218,11 +242,11 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.72, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.72, )"
+              "version": "[8.0.82, )"
             }
           },
           "imports": [
@@ -239,7 +263,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.19041.34, 10.0.19041.34]"
+              "version": "[10.0.19041.44, 10.0.19041.44]"
             }
           ],
           "frameworkReferences": {
@@ -250,7 +274,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
