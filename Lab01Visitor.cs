@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab01
 {
     class Lab01Visitor : Lab01BaseVisitor<double>
     {
-        //таблиця ідентифікаторів (тут для прикладу)
-        //в лабораторній роботі заміните на свою!!!!
-        Dictionary<string, double> tableIdentifier = new Dictionary<string, double>();
+        // Таблица значений ячеек
+        private readonly Dictionary<string, double> tableIdentifier;
+
+        public Lab01Visitor(Dictionary<string, double> tableIdentifier)
+        {
+            this.tableIdentifier = tableIdentifier;
+        }
 
         public override double VisitCompileUnit(Lab01Parser.CompileUnitContext context)
         {
@@ -26,20 +27,28 @@ namespace Lab01
             return result;
         }
 
-        //IdentifierExpr
-        public override double VisitIdentifierExpr(Lab01Parser.IdentifierExprContext context)
+        // Обработка выражений с адресами клеток, такими как A1, B2
+        public override double VisitCellAddressExpr(Lab01Parser.CellAddressExprContext context)
         {
-            var result = context.GetText();
-            double value;
-            //видобути значення змінної з таблиці
-            if (tableIdentifier.TryGetValue(result.ToString(), out value))
+            var cellAddress = context.GetText(); // Получаем адрес ячейки как строку, например "A1"
+
+            if (tableIdentifier.TryGetValue(cellAddress, out double value))
             {
-                return value;
+                return value; // Возвращаем значение, если адрес существует в словаре
             }
             else
             {
-                return 0.0;
+                throw new Exception($"Адрес ячейки '{cellAddress}' не найден");
             }
+        }
+
+
+
+        // IdentifierExpr
+        public override double VisitIdentifierExpr(Lab01Parser.IdentifierExprContext context)
+        {
+            var identifier = context.GetText();
+            return tableIdentifier.TryGetValue(identifier, out double value) ? value : 0.0;
         }
 
         public override double VisitParenthesizedExpr(Lab01Parser.ParenthesizedExprContext context)
@@ -53,7 +62,7 @@ namespace Lab01
             var right = WalkRight(context);
 
             Debug.WriteLine("{0} ^ {1}", left, right);
-            return System.Math.Pow(left, right);
+            return Math.Pow(left, right);
         }
 
         public override double VisitAdditiveExpr(Lab01Parser.AdditiveExprContext context)
@@ -66,7 +75,7 @@ namespace Lab01
                 Debug.WriteLine("{0} + {1}", left, right);
                 return left + right;
             }
-            else //LabCalculatorLexer.SUBTRACT
+            else
             {
                 Debug.WriteLine("{0} - {1}", left, right);
                 return left - right;
@@ -78,17 +87,29 @@ namespace Lab01
             var left = WalkLeft(context);
             var right = WalkRight(context);
 
-            if (context.operatorToken.Type == Lab01Lexer.MULTIPLY)
+            switch (context.operatorToken.Type)
             {
-                Debug.WriteLine("{0} * {1}", left, right);
-                return left * right;
-            }
-            else //LabCalculatorLexer.DIVIDE
-            {
-                Debug.WriteLine("{0} / {1}", left, right);
-                return left / right;
+                case Lab01Lexer.MULTIPLY:
+                    Debug.WriteLine("{0} * {1}", left, right);
+                    return left * right;
+
+                case Lab01Lexer.DIVIDE:
+                    Debug.WriteLine("{0} / {1}", left, right);
+                    return left / right;
+
+                case Lab01Lexer.DIV:
+                    Debug.WriteLine("{0} div {1}", left, right);
+                    return (int)left / (int)right; // Целочисленное деление
+
+                case Lab01Lexer.MOD:
+                    Debug.WriteLine("{0} mod {1}", left, right);
+                    return left % right; // Остаток от деления
+
+                default:
+                    throw new Exception("Невідомий оператор у виразі.");
             }
         }
+
 
         private double WalkLeft(Lab01Parser.ExpressionContext context)
         {

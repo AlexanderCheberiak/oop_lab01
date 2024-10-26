@@ -1,16 +1,12 @@
 ﻿using Antlr4.Runtime;
-using Lab01;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab01
 {
     public static class Calculator
     {
-        public static double Evaluate(string expression)
+        public static double Evaluate(string expression, Dictionary<string, double> cellValues)
         {
             var lexer = new Lab01Lexer(new AntlrInputStream(expression));
             lexer.RemoveErrorListeners();
@@ -21,7 +17,7 @@ namespace Lab01
 
             var tree = parser.compileUnit();
 
-            var visitor = new Lab01Visitor();
+            var visitor = new Lab01Visitor(cellValues);
 
             return visitor.Visit(tree);
         }

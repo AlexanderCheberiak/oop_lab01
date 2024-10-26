@@ -111,6 +111,21 @@ public partial class Lab01BaseListener : ILab01Listener {
 	public virtual void ExitIdentifierExpr([NotNull] Lab01Parser.IdentifierExprContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>CellAddressExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCellAddressExpr([NotNull] Lab01Parser.CellAddressExprContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>CellAddressExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCellAddressExpr([NotNull] Lab01Parser.CellAddressExprContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by the <c>ParenthesizedExpr</c>
 	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -150,6 +165,19 @@ public partial class Lab01BaseListener : ILab01Listener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitExpression([NotNull] Lab01Parser.ExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Lab01Parser.cellAddress"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCellAddress([NotNull] Lab01Parser.CellAddressContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Lab01Parser.cellAddress"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCellAddress([NotNull] Lab01Parser.CellAddressContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

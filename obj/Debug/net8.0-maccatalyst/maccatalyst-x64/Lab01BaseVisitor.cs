@@ -95,6 +95,18 @@ public partial class Lab01BaseVisitor<Result> : AbstractParseTreeVisitor<Result>
 	public virtual Result VisitIdentifierExpr([NotNull] Lab01Parser.IdentifierExprContext context) { return VisitChildren(context); }
 
 	/// <summary>
+	/// Visit a parse tree produced by the <c>CellAddressExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitCellAddressExpr([NotNull] Lab01Parser.CellAddressExprContext context) { return VisitChildren(context); }
+
+	/// <summary>
 	/// Visit a parse tree produced by the <c>ParenthesizedExpr</c>
 	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
 	/// <para>
@@ -127,5 +139,16 @@ public partial class Lab01BaseVisitor<Result> : AbstractParseTreeVisitor<Result>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	public virtual Result VisitExpression([NotNull] Lab01Parser.ExpressionContext context) { return VisitChildren(context); }
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Lab01Parser.cellAddress"/>.
+	/// <para>
+	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
+	/// on <paramref name="context"/>.
+	/// </para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	public virtual Result VisitCellAddress([NotNull] Lab01Parser.CellAddressContext context) { return VisitChildren(context); }
 }
 } // namespace Lab01

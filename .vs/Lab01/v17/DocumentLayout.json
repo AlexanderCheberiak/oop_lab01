@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "D:\\Uni\\2nd year\\OOP\\Lab01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01Visitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|solutionrelative:Lab01Visitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|D:\\Uni\\2nd year\\OOP\\Lab01\\Calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|solutionrelative:Calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|D:\\Uni\\2nd year\\OOP\\Lab01\\ThrowExceptionErrorListener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|solutionrelative:ThrowExceptionErrorListener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\lab01.g4||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -27,8 +15,16 @@
       "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\lab01.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:lab01.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|D:\\Uni\\2nd year\\OOP\\Lab01\\Calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|solutionrelative:Calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|D:\\Uni\\2nd year\\OOP\\Lab01\\ThrowExceptionErrorListener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|solutionrelative:ThrowExceptionErrorListener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,24 +34,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "Lab01.g4",
+              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.g4",
+              "RelativeDocumentMoniker": "Lab01.g4",
+              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.g4",
+              "RelativeToolTip": "Lab01.g4",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-24T15:23:00.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Calculator.cs",
               "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\Calculator.cs",
               "RelativeDocumentMoniker": "Calculator.cs",
               "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\Calculator.cs",
               "RelativeToolTip": "Calculator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T15:40:10.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T15:40:10.668Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ThrowExceptionErrorListener.cs",
               "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\ThrowExceptionErrorListener.cs",
               "RelativeDocumentMoniker": "ThrowExceptionErrorListener.cs",
@@ -63,73 +71,44 @@
               "RelativeToolTip": "ThrowExceptionErrorListener.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T15:38:55.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T15:38:55.445Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Lab01Visitor.cs",
               "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01Visitor.cs",
               "RelativeDocumentMoniker": "Lab01Visitor.cs",
               "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01Visitor.cs",
               "RelativeToolTip": "Lab01Visitor.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAIwFAAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-24T15:36:26.106Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Lab01",
-              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.csproj",
-              "RelativeDocumentMoniker": "Lab01.csproj",
-              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.csproj",
-              "RelativeToolTip": "Lab01.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-24T15:22:20.261Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Lab01.g4",
-              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.g4",
-              "RelativeDocumentMoniker": "Lab01.g4",
-              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.g4",
-              "RelativeToolTip": "Lab01.g4",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-24T15:23:00.932Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "MainPage.xaml.cs",
               "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml.cs",
               "RelativeToolTip": "MainPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAswKMAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T14:49:54.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-09T14:49:54.325Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml",
               "RelativeDocumentMoniker": "MainPage.xaml",
               "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml",
               "RelativeToolTip": "MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-09T14:49:52.669Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-09T14:49:52.669Z"
             }
           ]
         }

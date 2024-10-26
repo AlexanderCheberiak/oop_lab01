@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Lab01"
-             x:Class="Lab01.MainPage">
+             x:Class="Lab01.MainPage"
+             Title="Таблиця">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,16 +17,15 @@
         </Grid.ColumnDefinitions>
 
         <StackLayout Orientation="Horizontal">
-            <Button Text="Зберегти" Clicked="SaveButton_Clicked" />
-            <Button Text="Прочитати" Clicked="ReadButton_Clicked" />
-            <Button Text="Вийти" Clicked="ExitButton_Clicked" />
-            <Button Text="Порахувати" Clicked="CalculateButton_Clicked" />
-            <Button Text="Довідка" Clicked="HelpButton_Clicked" />
-            <Button Text="Видалити рядок" Clicked="DeleteRowButton_Clicked"/>
-            <Button Text="Додати рядок" Clicked="AddRowButton_Clicked" />
+            <Button Text="Зберегти" Clicked="SaveButton_Clicked" BackgroundColor="Green" />
+            <Button Text="Прочитати" Clicked="ReadButton_Clicked" BackgroundColor="Green" />
+            <Button Text="Порахувати" Clicked="CalculateButton_Clicked" BackgroundColor="Green" />
+            <Button Text="Видалити рядок" Clicked="DeleteRowButton_Clicked" BackgroundColor="Green" />
+            <Button Text="Додати рядок" Clicked="AddRowButton_Clicked" BackgroundColor="Green" />
+            <Button Text="Довідка" Clicked="HelpButton_Clicked" BackgroundColor="Green" />
+            <Button Text="Вийти" Clicked="ExitButton_Clicked" BackgroundColor="Green" />
         </StackLayout>
 
-        <Entry x:Name="textInput" Placeholder="Введіть текст" Grid.Row="1" Grid.ColumnSpan="2" />
 
         <ScrollView Grid.Row="2" Grid.ColumnSpan="2">
             <Grid x:Name="grid">

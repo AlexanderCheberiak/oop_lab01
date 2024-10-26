@@ -73,6 +73,14 @@ public interface ILab01Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitIdentifierExpr([NotNull] Lab01Parser.IdentifierExprContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by the <c>CellAddressExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCellAddressExpr([NotNull] Lab01Parser.CellAddressExprContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by the <c>ParenthesizedExpr</c>
 	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
 	/// </summary>
@@ -93,5 +101,12 @@ public interface ILab01Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitExpression([NotNull] Lab01Parser.ExpressionContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="Lab01Parser.cellAddress"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCellAddress([NotNull] Lab01Parser.CellAddressContext context);
 }
 } // namespace Lab01

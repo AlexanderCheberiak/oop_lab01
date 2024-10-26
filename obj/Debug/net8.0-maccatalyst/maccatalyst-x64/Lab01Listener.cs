@@ -97,6 +97,19 @@ public interface ILab01Listener : IParseTreeListener {
 	void ExitIdentifierExpr([NotNull] Lab01Parser.IdentifierExprContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>CellAddressExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCellAddressExpr([NotNull] Lab01Parser.CellAddressExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>CellAddressExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCellAddressExpr([NotNull] Lab01Parser.CellAddressExprContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by the <c>ParenthesizedExpr</c>
 	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
 	/// </summary>
@@ -130,5 +143,16 @@ public interface ILab01Listener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitExpression([NotNull] Lab01Parser.ExpressionContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="Lab01Parser.cellAddress"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCellAddress([NotNull] Lab01Parser.CellAddressContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="Lab01Parser.cellAddress"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCellAddress([NotNull] Lab01Parser.CellAddressContext context);
 }
 } // namespace Lab01

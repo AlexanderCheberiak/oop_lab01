@@ -80,6 +80,7 @@
             }
             return columnName;
         }
+
         // викликається, коли користувач вийде зі зміненої клітинки(втратить фокус)
         private void Entry_Unfocused(object sender, FocusEventArgs e)
         {
@@ -88,15 +89,90 @@
             var col = Grid.GetColumn(entry) - 1;
             var content = entry.Text;
             // Додайте додаткову логіку, яка виконується при виході зі зміненої клітинки
+            //try
+            //{
+            //    var res = Calculator.Evaluate(content);
+            //    entry.Text = res.ToString();
+            //}
+            //catch(Exception ex) {
+            //    entry.Text = content;
+            //}
         }
         private void CalculateButton_Clicked(object sender, EventArgs e)
         {
-            // Обробка кнопки "Порахувати"
-            //moy govnokod
-            //var entry = (Entry)sender;
-            //var expression = new Expression(entry.Text);
-            //entry.Text = expression.Evaluate()
+            CalculateAllCells();
         }
+
+        // Метод для вычисления значений всех ячеек
+        private void CalculateAllCells()
+        {
+            var cellValues = GetAllCellValues();
+
+            foreach (var entry in grid.Children.OfType<Entry>())
+            {
+                var cellContent = entry.Text;
+
+                // Пропускаем пустые ячейки
+                if (!string.IsNullOrEmpty(cellContent))
+                {
+                    CalculateCell(entry, cellValues);
+                }
+            }
+        }
+
+        // Метод для извлечения всех значений ячеек и формирования словаря
+        private Dictionary<string, double> GetAllCellValues()
+        {
+            var cellValues = new Dictionary<string, double>();
+
+            for (int row = 1; row <= CountRow; row++)
+            {
+                for (int col = 1; col <= CountColumn; col++)
+                {
+                    var cellAddress = $"{GetColumnName(col)}{row}";
+                    var entry = GetCellEntry(row, col);
+
+                    if (entry != null && double.TryParse(entry.Text, out double cellValue))
+                    {
+                        cellValues[cellAddress] = cellValue;
+                    }
+                }
+            }
+
+            return cellValues;
+        }
+
+        // Метод для получения Entry ячейки по строке и столбцу
+        private Entry GetCellEntry(int row, int col)
+        {
+            return grid.Children
+                .OfType<Entry>()
+                .FirstOrDefault(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == col);
+        }
+
+        // Метод для вычисления значения одной ячейки с использованием Calculator
+        private void CalculateCell(Entry entry, Dictionary<string, double> cellValues)
+        {
+            var cellContent = entry.Text;
+
+            if (!string.IsNullOrEmpty(cellContent))
+            {
+                try
+                {
+                    // Вызываем Evaluate с выражением и значениями ячеек
+                    var result = Calculator.Evaluate(cellContent, cellValues);
+                    entry.Text = result.ToString();
+                }
+                catch
+                {
+                    // Оставляем оригинальный текст, если ошибка вычисления
+                    entry.Text = cellContent;
+                }
+            }
+        }
+
+
+
         private void SaveButton_Clicked(object sender, EventArgs e)
         {
             // Обробка кнопки "Зберегти"
@@ -115,7 +191,7 @@
         }
         private async void HelpButton_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Довідка", "Лабораторна робота 1. Студента Василя Іваненка", "OK");
+            await DisplayAlert("Довідка", "Лабораторна робота 1. Студента Чеберяка Олександра", "OK");
         }
         private void DeleteRowButton_Clicked(object sender, EventArgs e)
         {
