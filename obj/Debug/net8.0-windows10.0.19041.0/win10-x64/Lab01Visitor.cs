@@ -57,6 +57,14 @@ public interface ILab01Visitor<Result> : IParseTreeVisitor<Result> {
 	Result VisitAdditiveExpr([NotNull] Lab01Parser.AdditiveExprContext context);
 
 	/// <summary>
+	/// Visit a parse tree produced by the <c>ComparisonExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitComparisonExpr([NotNull] Lab01Parser.ComparisonExprContext context);
+
+	/// <summary>
 	/// Visit a parse tree produced by the <c>NumberExpr</c>
 	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
 	/// </summary>
@@ -87,6 +95,14 @@ public interface ILab01Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitParenthesizedExpr([NotNull] Lab01Parser.ParenthesizedExprContext context);
+
+	/// <summary>
+	/// Visit a parse tree produced by the <c>NotExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitNotExpr([NotNull] Lab01Parser.NotExprContext context);
 
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="Lab01Parser.compileUnit"/>.

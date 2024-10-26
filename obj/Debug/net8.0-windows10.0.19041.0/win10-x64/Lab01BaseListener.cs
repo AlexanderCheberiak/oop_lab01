@@ -81,6 +81,21 @@ public partial class Lab01BaseListener : ILab01Listener {
 	public virtual void ExitAdditiveExpr([NotNull] Lab01Parser.AdditiveExprContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>ComparisonExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterComparisonExpr([NotNull] Lab01Parser.ComparisonExprContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>ComparisonExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitComparisonExpr([NotNull] Lab01Parser.ComparisonExprContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by the <c>NumberExpr</c>
 	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -139,6 +154,21 @@ public partial class Lab01BaseListener : ILab01Listener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitParenthesizedExpr([NotNull] Lab01Parser.ParenthesizedExprContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>NotExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterNotExpr([NotNull] Lab01Parser.NotExprContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>NotExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitNotExpr([NotNull] Lab01Parser.NotExprContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="Lab01Parser.compileUnit"/>.

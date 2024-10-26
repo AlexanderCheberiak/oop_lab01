@@ -32,7 +32,8 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 public partial class Lab01Parser : Parser {
 	public const int
 		NUMBER=1, IDENTIFIER=2, COLUMN=3, ROW=4, INT=5, EXPONENT=6, MULTIPLY=7, 
-		DIVIDE=8, DIV=9, MOD=10, SUBTRACT=11, ADD=12, LPAREN=13, RPAREN=14, WS=15;
+		DIVIDE=8, DIV=9, MOD=10, SUBTRACT=11, ADD=12, EQUAL=13, LESS=14, GREATER=15, 
+		NOT=16, LPAREN=17, RPAREN=18, WS=19;
 	public const int
 		RULE_compileUnit = 0, RULE_expression = 1, RULE_cellAddress = 2;
 	public static readonly string[] ruleNames = {
@@ -41,11 +42,12 @@ public partial class Lab01Parser : Parser {
 
 	private static readonly string[] _LiteralNames = {
 		null, null, null, null, null, null, "'^'", "'*'", "'/'", "'div'", "'mod'", 
-		"'-'", "'+'", "'('", "')'"
+		"'-'", "'+'", "'='", "'<'", "'>'", "'not'", "'('", "')'"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, "NUMBER", "IDENTIFIER", "COLUMN", "ROW", "INT", "EXPONENT", "MULTIPLY", 
-		"DIVIDE", "DIV", "MOD", "SUBTRACT", "ADD", "LPAREN", "RPAREN", "WS"
+		"DIVIDE", "DIV", "MOD", "SUBTRACT", "ADD", "EQUAL", "LESS", "GREATER", 
+		"NOT", "LPAREN", "RPAREN", "WS"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -231,6 +233,32 @@ public partial class Lab01Parser : Parser {
 			else return visitor.VisitChildren(this);
 		}
 	}
+	public partial class ComparisonExprContext : ExpressionContext {
+		public IToken operatorToken;
+		public ExpressionContext[] expression() {
+			return GetRuleContexts<ExpressionContext>();
+		}
+		public ExpressionContext expression(int i) {
+			return GetRuleContext<ExpressionContext>(i);
+		}
+		public ITerminalNode EQUAL() { return GetToken(Lab01Parser.EQUAL, 0); }
+		public ITerminalNode LESS() { return GetToken(Lab01Parser.LESS, 0); }
+		public ITerminalNode GREATER() { return GetToken(Lab01Parser.GREATER, 0); }
+		public ComparisonExprContext(ExpressionContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			ILab01Listener typedListener = listener as ILab01Listener;
+			if (typedListener != null) typedListener.EnterComparisonExpr(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			ILab01Listener typedListener = listener as ILab01Listener;
+			if (typedListener != null) typedListener.ExitComparisonExpr(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			ILab01Visitor<TResult> typedVisitor = visitor as ILab01Visitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitComparisonExpr(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
 	public partial class NumberExprContext : ExpressionContext {
 		public ITerminalNode NUMBER() { return GetToken(Lab01Parser.NUMBER, 0); }
 		public NumberExprContext(ExpressionContext context) { CopyFrom(context); }
@@ -305,6 +333,26 @@ public partial class Lab01Parser : Parser {
 			else return visitor.VisitChildren(this);
 		}
 	}
+	public partial class NotExprContext : ExpressionContext {
+		public ITerminalNode NOT() { return GetToken(Lab01Parser.NOT, 0); }
+		public ExpressionContext expression() {
+			return GetRuleContext<ExpressionContext>(0);
+		}
+		public NotExprContext(ExpressionContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			ILab01Listener typedListener = listener as ILab01Listener;
+			if (typedListener != null) typedListener.EnterNotExpr(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			ILab01Listener typedListener = listener as ILab01Listener;
+			if (typedListener != null) typedListener.ExitNotExpr(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			ILab01Visitor<TResult> typedVisitor = visitor as ILab01Visitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitNotExpr(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
 
 	[RuleVersion(0)]
 	public ExpressionContext expression() {
@@ -323,7 +371,7 @@ public partial class Lab01Parser : Parser {
 			int _alt;
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 17;
+			State = 19;
 			_errHandler.Sync(this);
 			switch (_input.La(1)) {
 			case LPAREN:
@@ -337,12 +385,21 @@ public partial class Lab01Parser : Parser {
 				State = 12; Match(RPAREN);
 				}
 				break;
+			case NOT:
+				{
+				_localctx = new NotExprContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				State = 14; Match(NOT);
+				State = 15; expression(8);
+				}
+				break;
 			case NUMBER:
 				{
 				_localctx = new NumberExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 14; Match(NUMBER);
+				State = 16; Match(NUMBER);
 				}
 				break;
 			case IDENTIFIER:
@@ -350,7 +407,7 @@ public partial class Lab01Parser : Parser {
 				_localctx = new IdentifierExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 15; Match(IDENTIFIER);
+				State = 17; Match(IDENTIFIER);
 				}
 				break;
 			case COLUMN:
@@ -358,14 +415,14 @@ public partial class Lab01Parser : Parser {
 				_localctx = new CellAddressExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				State = 16; cellAddress();
+				State = 18; cellAddress();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.Lt(-1);
-			State = 30;
+			State = 35;
 			_errHandler.Sync(this);
 			_alt = Interpreter.AdaptivePredict(_input,2,_ctx);
 			while ( _alt!=2 && _alt!=global::Antlr4.Runtime.Atn.ATN.InvalidAltNumber ) {
@@ -373,17 +430,17 @@ public partial class Lab01Parser : Parser {
 					if ( _parseListeners!=null ) TriggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					State = 28;
+					State = 33;
 					_errHandler.Sync(this);
 					switch ( Interpreter.AdaptivePredict(_input,1,_ctx) ) {
 					case 1:
 						{
 						_localctx = new ExponentialExprContext(new ExpressionContext(_parentctx, _parentState));
 						PushNewRecursionContext(_localctx, _startState, RULE_expression);
-						State = 19;
-						if (!(Precpred(_ctx, 6))) throw new FailedPredicateException(this, "Precpred(_ctx, 6)");
-						State = 20; Match(EXPONENT);
-						State = 21; expression(7);
+						State = 21;
+						if (!(Precpred(_ctx, 7))) throw new FailedPredicateException(this, "Precpred(_ctx, 7)");
+						State = 22; Match(EXPONENT);
+						State = 23; expression(8);
 						}
 						break;
 
@@ -391,9 +448,9 @@ public partial class Lab01Parser : Parser {
 						{
 						_localctx = new MultiplicativeExprContext(new ExpressionContext(_parentctx, _parentState));
 						PushNewRecursionContext(_localctx, _startState, RULE_expression);
-						State = 22;
-						if (!(Precpred(_ctx, 5))) throw new FailedPredicateException(this, "Precpred(_ctx, 5)");
-						State = 23;
+						State = 24;
+						if (!(Precpred(_ctx, 6))) throw new FailedPredicateException(this, "Precpred(_ctx, 6)");
+						State = 25;
 						((MultiplicativeExprContext)_localctx).operatorToken = _input.Lt(1);
 						_la = _input.La(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MULTIPLY) | (1L << DIVIDE) | (1L << DIV) | (1L << MOD))) != 0)) ) {
@@ -406,7 +463,7 @@ public partial class Lab01Parser : Parser {
 							_errHandler.ReportMatch(this);
 							Consume();
 						}
-						State = 24; expression(6);
+						State = 26; expression(7);
 						}
 						break;
 
@@ -414,9 +471,9 @@ public partial class Lab01Parser : Parser {
 						{
 						_localctx = new AdditiveExprContext(new ExpressionContext(_parentctx, _parentState));
 						PushNewRecursionContext(_localctx, _startState, RULE_expression);
-						State = 25;
-						if (!(Precpred(_ctx, 4))) throw new FailedPredicateException(this, "Precpred(_ctx, 4)");
-						State = 26;
+						State = 27;
+						if (!(Precpred(_ctx, 5))) throw new FailedPredicateException(this, "Precpred(_ctx, 5)");
+						State = 28;
 						((AdditiveExprContext)_localctx).operatorToken = _input.Lt(1);
 						_la = _input.La(1);
 						if ( !(_la==SUBTRACT || _la==ADD) ) {
@@ -429,13 +486,36 @@ public partial class Lab01Parser : Parser {
 							_errHandler.ReportMatch(this);
 							Consume();
 						}
-						State = 27; expression(5);
+						State = 29; expression(6);
+						}
+						break;
+
+					case 4:
+						{
+						_localctx = new ComparisonExprContext(new ExpressionContext(_parentctx, _parentState));
+						PushNewRecursionContext(_localctx, _startState, RULE_expression);
+						State = 30;
+						if (!(Precpred(_ctx, 4))) throw new FailedPredicateException(this, "Precpred(_ctx, 4)");
+						State = 31;
+						((ComparisonExprContext)_localctx).operatorToken = _input.Lt(1);
+						_la = _input.La(1);
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << EQUAL) | (1L << LESS) | (1L << GREATER))) != 0)) ) {
+							((ComparisonExprContext)_localctx).operatorToken = _errHandler.RecoverInline(this);
+						} else {
+							if (_input.La(1) == TokenConstants.Eof) {
+								matchedEOF = true;
+							}
+
+							_errHandler.ReportMatch(this);
+							Consume();
+						}
+						State = 32; expression(5);
 						}
 						break;
 					}
 					} 
 				}
-				State = 32;
+				State = 37;
 				_errHandler.Sync(this);
 				_alt = Interpreter.AdaptivePredict(_input,2,_ctx);
 			}
@@ -482,8 +562,8 @@ public partial class Lab01Parser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 33; Match(COLUMN);
-			State = 34; Match(ROW);
+			State = 38; Match(COLUMN);
+			State = 39; Match(ROW);
 			}
 		}
 		catch (RecognitionException re) {
@@ -505,31 +585,35 @@ public partial class Lab01Parser : Parser {
 	}
 	private bool expression_sempred(ExpressionContext _localctx, int predIndex) {
 		switch (predIndex) {
-		case 0: return Precpred(_ctx, 6);
+		case 0: return Precpred(_ctx, 7);
 
-		case 1: return Precpred(_ctx, 5);
+		case 1: return Precpred(_ctx, 6);
 
-		case 2: return Precpred(_ctx, 4);
+		case 2: return Precpred(_ctx, 5);
+
+		case 3: return Precpred(_ctx, 4);
 		}
 		return true;
 	}
 
 	public static readonly string _serializedATN =
-		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\x11\'\x4\x2\t\x2"+
+		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\x15,\x4\x2\t\x2"+
 		"\x4\x3\t\x3\x4\x4\t\x4\x3\x2\x3\x2\x3\x2\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3"+
-		"\x3\x3\x3\x3\x3\x3\x5\x3\x14\n\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3"+
-		"\x3\x3\x3\x3\x3\x3\a\x3\x1F\n\x3\f\x3\xE\x3\"\v\x3\x3\x4\x3\x4\x3\x4\x3"+
-		"\x4\x2\x2\x3\x4\x5\x2\x2\x4\x2\x6\x2\x2\x4\x3\x2\t\f\x3\x2\r\xE)\x2\b"+
-		"\x3\x2\x2\x2\x4\x13\x3\x2\x2\x2\x6#\x3\x2\x2\x2\b\t\x5\x4\x3\x2\t\n\a"+
-		"\x2\x2\x3\n\x3\x3\x2\x2\x2\v\f\b\x3\x1\x2\f\r\a\xF\x2\x2\r\xE\x5\x4\x3"+
-		"\x2\xE\xF\a\x10\x2\x2\xF\x14\x3\x2\x2\x2\x10\x14\a\x3\x2\x2\x11\x14\a"+
-		"\x4\x2\x2\x12\x14\x5\x6\x4\x2\x13\v\x3\x2\x2\x2\x13\x10\x3\x2\x2\x2\x13"+
-		"\x11\x3\x2\x2\x2\x13\x12\x3\x2\x2\x2\x14 \x3\x2\x2\x2\x15\x16\f\b\x2\x2"+
-		"\x16\x17\a\b\x2\x2\x17\x1F\x5\x4\x3\t\x18\x19\f\a\x2\x2\x19\x1A\t\x2\x2"+
-		"\x2\x1A\x1F\x5\x4\x3\b\x1B\x1C\f\x6\x2\x2\x1C\x1D\t\x3\x2\x2\x1D\x1F\x5"+
-		"\x4\x3\a\x1E\x15\x3\x2\x2\x2\x1E\x18\x3\x2\x2\x2\x1E\x1B\x3\x2\x2\x2\x1F"+
-		"\"\x3\x2\x2\x2 \x1E\x3\x2\x2\x2 !\x3\x2\x2\x2!\x5\x3\x2\x2\x2\" \x3\x2"+
-		"\x2\x2#$\a\x5\x2\x2$%\a\x6\x2\x2%\a\x3\x2\x2\x2\x5\x13\x1E ";
+		"\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x5\x3\x16\n\x3\x3\x3\x3\x3\x3\x3\x3\x3"+
+		"\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\a\x3$\n\x3\f\x3\xE\x3"+
+		"\'\v\x3\x3\x4\x3\x4\x3\x4\x3\x4\x2\x2\x3\x4\x5\x2\x2\x4\x2\x6\x2\x2\x5"+
+		"\x3\x2\t\f\x3\x2\r\xE\x3\x2\xF\x11\x30\x2\b\x3\x2\x2\x2\x4\x15\x3\x2\x2"+
+		"\x2\x6(\x3\x2\x2\x2\b\t\x5\x4\x3\x2\t\n\a\x2\x2\x3\n\x3\x3\x2\x2\x2\v"+
+		"\f\b\x3\x1\x2\f\r\a\x13\x2\x2\r\xE\x5\x4\x3\x2\xE\xF\a\x14\x2\x2\xF\x16"+
+		"\x3\x2\x2\x2\x10\x11\a\x12\x2\x2\x11\x16\x5\x4\x3\n\x12\x16\a\x3\x2\x2"+
+		"\x13\x16\a\x4\x2\x2\x14\x16\x5\x6\x4\x2\x15\v\x3\x2\x2\x2\x15\x10\x3\x2"+
+		"\x2\x2\x15\x12\x3\x2\x2\x2\x15\x13\x3\x2\x2\x2\x15\x14\x3\x2\x2\x2\x16"+
+		"%\x3\x2\x2\x2\x17\x18\f\t\x2\x2\x18\x19\a\b\x2\x2\x19$\x5\x4\x3\n\x1A"+
+		"\x1B\f\b\x2\x2\x1B\x1C\t\x2\x2\x2\x1C$\x5\x4\x3\t\x1D\x1E\f\a\x2\x2\x1E"+
+		"\x1F\t\x3\x2\x2\x1F$\x5\x4\x3\b !\f\x6\x2\x2!\"\t\x4\x2\x2\"$\x5\x4\x3"+
+		"\a#\x17\x3\x2\x2\x2#\x1A\x3\x2\x2\x2#\x1D\x3\x2\x2\x2# \x3\x2\x2\x2$\'"+
+		"\x3\x2\x2\x2%#\x3\x2\x2\x2%&\x3\x2\x2\x2&\x5\x3\x2\x2\x2\'%\x3\x2\x2\x2"+
+		"()\a\x5\x2\x2)*\a\x6\x2\x2*\a\x3\x2\x2\x2\x5\x15#%";
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }

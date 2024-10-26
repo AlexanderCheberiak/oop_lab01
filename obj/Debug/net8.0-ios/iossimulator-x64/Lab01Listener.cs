@@ -71,6 +71,19 @@ public interface ILab01Listener : IParseTreeListener {
 	void ExitAdditiveExpr([NotNull] Lab01Parser.AdditiveExprContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>ComparisonExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterComparisonExpr([NotNull] Lab01Parser.ComparisonExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>ComparisonExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitComparisonExpr([NotNull] Lab01Parser.ComparisonExprContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by the <c>NumberExpr</c>
 	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
 	/// </summary>
@@ -121,6 +134,19 @@ public interface ILab01Listener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitParenthesizedExpr([NotNull] Lab01Parser.ParenthesizedExprContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>NotExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterNotExpr([NotNull] Lab01Parser.NotExprContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>NotExpr</c>
+	/// labeled alternative in <see cref="Lab01Parser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitNotExpr([NotNull] Lab01Parser.NotExprContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="Lab01Parser.compileUnit"/>.

@@ -2,8 +2,9 @@
 {
     public partial class MainPage : ContentPage
     {
-        const int CountColumn = 20; // кількість стовпчиків (A to Z)
-        const int CountRow = 20; // кількість рядків
+        int CountColumn = 20; // кількість стовпчиків (A to Z)
+        int CountRow = 21; // кількість рядків
+        private Dictionary<string, string> cellFormulas = new Dictionary<string, string>(); // Словник для зберігання виразів
         public MainPage()
         {
             InitializeComponent();
@@ -68,6 +69,8 @@
                 }
             }
         }
+
+
         private string GetColumnName(int colIndex)
         {
             int dividend = colIndex;
@@ -87,20 +90,27 @@
             var entry = (Entry)sender;
             var row = Grid.GetRow(entry) - 1;
             var col = Grid.GetColumn(entry) - 1;
+            var cellAddress = $"{GetColumnName(col + 1)}{row + 1}";
             var content = entry.Text;
-            // Додайте додаткову логіку, яка виконується при виході зі зміненої клітинки
-            //try
-            //{
-            //    var res = Calculator.Evaluate(content);
-            //    entry.Text = res.ToString();
-            //}
-            //catch(Exception ex) {
-            //    entry.Text = content;
-            //}
+
+            // Зберігаємо початковий вираз при втраті фокусу
+            if (!string.IsNullOrEmpty(content))
+            {
+                cellFormulas[cellAddress] = content;
+            }
         }
-        private void CalculateButton_Clicked(object sender, EventArgs e)
+        private void CalculateSwitch_Toggled(object sender, ToggledEventArgs e)
         {
-            CalculateAllCells();
+            if (e.Value)
+            {
+                // Переключатель включен: вычисляем значения ячеек
+                CalculateAllCells();
+            }
+            else
+            {
+                // Переключатель выключен: восстанавливаем формулы
+                RestoreFormulas();
+            }
         }
 
         // Метод для вычисления значений всех ячеек
@@ -110,12 +120,34 @@
 
             foreach (var entry in grid.Children.OfType<Entry>())
             {
-                var cellContent = entry.Text;
+                var cellAddress = $"{GetColumnName(Grid.GetColumn(entry))}{Grid.GetRow(entry)}";
 
-                // Пропускаем пустые ячейки
-                if (!string.IsNullOrEmpty(cellContent))
+                if (cellFormulas.TryGetValue(cellAddress, out var cellContent) && !string.IsNullOrEmpty(cellContent))
                 {
-                    CalculateCell(entry, cellValues);
+                    try
+                    {
+                        // Вычисляем формулу и показываем результат
+                        var result = Calculator.Evaluate(cellContent, cellValues);
+                        entry.Text = result.ToString();
+                    }
+                    catch
+                    {
+                        entry.Text = cellContent; // Если ошибка, оставляем оригинальный текст
+                    }
+                }
+            }
+        }
+
+        private void RestoreFormulas()
+        {
+            // Восстанавливаем исходные формулы в каждой ячейке
+            foreach (var entry in grid.Children.OfType<Entry>())
+            {
+                var cellAddress = $"{GetColumnName(Grid.GetColumn(entry))}{Grid.GetRow(entry)}";
+
+                if (cellFormulas.TryGetValue(cellAddress, out var formula))
+                {
+                    entry.Text = formula;
                 }
             }
         }
@@ -142,7 +174,7 @@
             return cellValues;
         }
 
-        // Метод для получения Entry ячейки по строке и столбцу
+        // Метод для отримання комірки Entry по рядку та стовпчику
         private Entry GetCellEntry(int row, int col)
         {
             return grid.Children
@@ -150,7 +182,7 @@
                 .FirstOrDefault(e => Grid.GetRow(e) == row && Grid.GetColumn(e) == col);
         }
 
-        // Метод для вычисления значения одной ячейки с использованием Calculator
+        // Метод для обчислення значення однієї комірки з використанням класу Calculator
         private void CalculateCell(Entry entry, Dictionary<string, double> cellValues)
         {
             var cellContent = entry.Text;
@@ -159,28 +191,16 @@
             {
                 try
                 {
-                    // Вызываем Evaluate с выражением и значениями ячеек
                     var result = Calculator.Evaluate(cellContent, cellValues);
                     entry.Text = result.ToString();
                 }
                 catch
                 {
-                    // Оставляем оригинальный текст, если ошибка вычисления
                     entry.Text = cellContent;
                 }
             }
         }
 
-
-
-        private void SaveButton_Clicked(object sender, EventArgs e)
-        {
-            // Обробка кнопки "Зберегти"
-        }
-        private void ReadButton_Clicked(object sender, EventArgs e)
-        {
-            // Обробка кнопки "Прочитати"
-        }
         private async void ExitButton_Clicked(object sender, EventArgs e)
         {
             bool answer = await DisplayAlert("Підтвердження", "Ви дійсно хочете вийти ? ", "Так", "Ні");
@@ -191,7 +211,7 @@
         }
         private async void HelpButton_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Довідка", "Лабораторна робота 1. Студента Чеберяка Олександра", "OK");
+            await DisplayAlert("Довідка", "Лабораторна робота 1(Варіант 23)\nСтудента Чеберяка Олександра\nДоступні операції:\nАрифметичні: +, -, *, /, ^, mod, dіv\nЛогічні: =, <, >, not", "OK");
         }
         private void DeleteRowButton_Clicked(object sender, EventArgs e)
         {
@@ -205,16 +225,19 @@
                     grid.Children.RemoveAt((lastRowIndex * CountColumn) + col + 1); // Remove entry
                 }
             }
+            CountRow--;
         }
+
+
 
         private void AddRowButton_Clicked(object sender, EventArgs e)
         {
             int newRow = grid.RowDefinitions.Count;
 
-            // Add a new row definition
+            // Додаємо нове визначення рядка
             grid.RowDefinitions.Add(new RowDefinition());
 
-            // Add label for the row number
+            // Додаємо номер рядка
             var label = new Label
             {
                 Text = newRow.ToString(),
@@ -225,7 +248,7 @@
             Grid.SetColumn(label, 0);
             grid.Children.Add(label);
 
-            // Add entry cells for the new row
+            // Створюємо комірки для нового рядка
             for (int col = 0; col < CountColumn; col++)
             {
                 var entry = new Entry
@@ -241,6 +264,78 @@
                 Grid.SetColumn(entry, col + 1);
                 grid.Children.Add(entry);
             }
+            CountRow++;
         }
+
+
+        private void AddColumnButton_Clicked(object sender, EventArgs e)
+        {
+            // Додати новий стовпець у визначення стовпців
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+
+            // Визначити номер нового стовпця (CountColumn + 1, оскільки починаємо з 0)
+            int newColIndex = CountColumn + 1;
+
+            // Додати заголовок для нового стовпчика
+            var headerLabel = new Label
+            {
+                Text = GetColumnName(newColIndex),
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center
+            };
+            Grid.SetRow(headerLabel, 0);
+            Grid.SetColumn(headerLabel, newColIndex);
+            grid.Children.Add(headerLabel);
+
+            // Пройтися всіма наявними рядками і додати нову комірку (Entry) у новий стовпець
+            for (int row = 0; row < CountRow; row++)
+            {
+                var entry = new Entry
+                {
+                    Text = "",
+                    VerticalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.Center
+                };
+                entry.Unfocused += Entry_Unfocused;
+                Grid.SetRow(entry, row + 1);
+                Grid.SetColumn(entry, newColIndex);
+                grid.Children.Add(entry);
+            }
+
+            CountColumn++;
+        }
+
+        private void DeleteColumnButton_Clicked(object sender, EventArgs e)
+        {
+            if (CountColumn > 1)
+            {
+                // Видаляємо визначення останнього стовпчика
+                int lastColIndex = CountColumn;
+                grid.ColumnDefinitions.RemoveAt(lastColIndex);
+
+                // Видаляємо заголовок останнього стовпчика
+                var headerLabel = grid.Children
+                    .OfType<Label>()
+                    .FirstOrDefault(l => Grid.GetRow(l) == 0 && Grid.GetColumn(l) == lastColIndex);
+                if (headerLabel != null)
+                {
+                    grid.Children.Remove(headerLabel);
+                }
+
+                // Видаляємо комірки (Entry) з останнього стовпця для кожного рядка
+                for (int row = 1; row <= CountRow; row++)
+                {
+                    var cell = GetCellEntry(row, lastColIndex);
+                    if (cell != null)
+                    {
+                        grid.Children.Remove(cell);
+                    }
+                }
+
+                CountColumn--;
+            }
+        }
+
     }
 }
+

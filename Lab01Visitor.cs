@@ -6,7 +6,7 @@ namespace Lab01
 {
     class Lab01Visitor : Lab01BaseVisitor<double>
     {
-        // Таблица значений ячеек
+        // Таблиця значень комірок
         private readonly Dictionary<string, double> tableIdentifier;
 
         public Lab01Visitor(Dictionary<string, double> tableIdentifier)
@@ -27,18 +27,18 @@ namespace Lab01
             return result;
         }
 
-        // Обработка выражений с адресами клеток, такими как A1, B2
+        // Обробка виразів з адресами клітин, такими як A1, B2
         public override double VisitCellAddressExpr(Lab01Parser.CellAddressExprContext context)
         {
-            var cellAddress = context.GetText(); // Получаем адрес ячейки как строку, например "A1"
+            var cellAddress = context.GetText(); // Отримуємо адресу комірки як рядок, наприклад «A1»
 
             if (tableIdentifier.TryGetValue(cellAddress, out double value))
             {
-                return value; // Возвращаем значение, если адрес существует в словаре
+                return value; // Повертаємо значення, якщо адреса існує в словнику
             }
             else
             {
-                throw new Exception($"Адрес ячейки '{cellAddress}' не найден");
+                throw new Exception($"Адреса комірки '{cellAddress}' не знайдена");
             }
         }
 
@@ -56,6 +56,34 @@ namespace Lab01
             return Visit(context.expression());
         }
 
+        //Логічне заперечення
+        public override double VisitNotExpr(Lab01Parser.NotExprContext context)
+        {
+            var value = Visit(context.expression());
+
+            return value == 0 ? 1.0 : 0.0;
+        }
+
+        //Порівняння <, >, =
+        public override double VisitComparisonExpr(Lab01Parser.ComparisonExprContext context)
+        {
+            var left = Visit(context.expression(0));
+            var right = Visit(context.expression(1));
+
+            switch (context.operatorToken.Type)
+            {
+                case Lab01Lexer.EQUAL:
+                    return left == right ? 1.0 : 0.0;
+                case Lab01Lexer.LESS:
+                    return left < right ? 1.0 : 0.0;
+                case Lab01Lexer.GREATER:
+                    return left > right ? 1.0 : 0.0;
+                default:
+                    throw new InvalidOperationException("Unknown comparison operator");
+            }
+        }
+
+        //Степінь
         public override double VisitExponentialExpr(Lab01Parser.ExponentialExprContext context)
         {
             var left = WalkLeft(context);
@@ -65,6 +93,7 @@ namespace Lab01
             return Math.Pow(left, right);
         }
 
+        //Додавання
         public override double VisitAdditiveExpr(Lab01Parser.AdditiveExprContext context)
         {
             var left = WalkLeft(context);
@@ -82,6 +111,7 @@ namespace Lab01
             }
         }
 
+        //Множення
         public override double VisitMultiplicativeExpr(Lab01Parser.MultiplicativeExprContext context)
         {
             var left = WalkLeft(context);
