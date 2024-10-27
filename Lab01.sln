@@ -5,14 +5,14 @@ VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab01", "Lab01.csproj", "{BC797FFC-A460-42EE-8ACF-475490393343}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{95F308D3-D766-41FE-9CFB-BED3772A1826}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution elements", "Solution elements", "{95F308D3-D766-41FE-9CFB-BED3772A1826}"
 	ProjectSection(SolutionItems) = preProject
 		Calculator.cs = Calculator.cs
 		Lab01Visitor.cs = Lab01Visitor.cs
 		ThrowExceptionErrorListener.cs = ThrowExceptionErrorListener.cs
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab01.Tests", "..\Lab01.Tests\Lab01.Tests.csproj", "{F38D131D-6CA7-48B1-A2F0-7D2EA0C95E58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab01.Tests", "..\Lab01.Tests\Lab01.Tests.csproj", "{F38D131D-6CA7-48B1-A2F0-7D2EA0C95E58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

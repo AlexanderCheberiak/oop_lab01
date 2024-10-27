@@ -1,0 +1,13 @@
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01.csproj.AssemblyReference.cache
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01Lexer.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01Parser.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01Listener.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01BaseListener.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01Visitor.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01BaseVisitor.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01.csproj.Antlr4GeneratedCodeFileListAbsolute.txt
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01.GeneratedMSBuildEditorConfig.editorconfig
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01.AssemblyInfoInputs.cache
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01.AssemblyInfo.cs
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01.csproj.CoreCompileInputs.cache
+D:\Uni\2nd year\OOP\Lab01\obj\Debug\net8.0\Lab01.sourcelink.json
