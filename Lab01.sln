@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 		ThrowExceptionErrorListener.cs = ThrowExceptionErrorListener.cs
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab01.Tests", "..\Lab01.Tests\Lab01.Tests.csproj", "{F38D131D-6CA7-48B1-A2F0-7D2EA0C95E58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{BC797FFC-A460-42EE-8ACF-475490393343}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC797FFC-A460-42EE-8ACF-475490393343}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC797FFC-A460-42EE-8ACF-475490393343}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F38D131D-6CA7-48B1-A2F0-7D2EA0C95E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F38D131D-6CA7-48B1-A2F0-7D2EA0C95E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F38D131D-6CA7-48B1-A2F0-7D2EA0C95E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F38D131D-6CA7-48B1-A2F0-7D2EA0C95E58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

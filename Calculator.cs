@@ -1,12 +1,13 @@
 ﻿using Antlr4.Runtime;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Lab01
 {
     public static class Calculator
     {
-        public static double Evaluate(string expression, Dictionary<string, double> cellValues)
+        public static string Evaluate(string expression, Dictionary<string, double> cellValues)
         {
             var lexer = new Lab01Lexer(new AntlrInputStream(expression));
             lexer.RemoveErrorListeners();
@@ -19,7 +20,9 @@ namespace Lab01
 
             var visitor = new Lab01Visitor(cellValues);
 
-            return visitor.Visit(tree);
-        }
+            try { return visitor.Visit(tree).ToString(); }
+            catch (System.DivideByZeroException) { return "Помилка: ділення на 0"; }
+            catch { return "Помилка обчислення "; }
+            }
     }
 }

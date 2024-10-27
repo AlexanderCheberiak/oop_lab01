@@ -16,7 +16,9 @@ namespace Lab01
 
         public override double VisitCompileUnit(Lab01Parser.CompileUnitContext context)
         {
-            return Visit(context.expression());
+            try { return Visit(context.expression()); }
+            catch (System.DivideByZeroException) { throw new System.DivideByZeroException("Divide by 0"); }
+            catch { throw new Exception("Комірка не знайдена"); }
         }
 
         public override double VisitNumberExpr(Lab01Parser.NumberExprContext context)
@@ -38,7 +40,7 @@ namespace Lab01
             }
             else
             {
-                throw new Exception($"Адреса комірки '{cellAddress}' не знайдена");
+                throw new Exception("Комірка не знайдена");
             }
         }
 
@@ -79,7 +81,7 @@ namespace Lab01
                 case Lab01Lexer.GREATER:
                     return left > right ? 1.0 : 0.0;
                 default:
-                    throw new InvalidOperationException("Unknown comparison operator");
+                    throw new InvalidOperationException("Невідомий оператор порівняння.");
             }
         }
 
@@ -125,15 +127,18 @@ namespace Lab01
 
                 case Lab01Lexer.DIVIDE:
                     Debug.WriteLine("{0} / {1}", left, right);
+                    if (right == 0) { throw new DivideByZeroException("Divide by 0"); };
                     return left / right;
 
                 case Lab01Lexer.DIV:
                     Debug.WriteLine("{0} div {1}", left, right);
-                    return (int)left / (int)right; // Целочисленное деление
+                    if (right == 0) { throw new DivideByZeroException("Divide by 0"); };
+                    return (int)left / (int)right; 
 
                 case Lab01Lexer.MOD:
                     Debug.WriteLine("{0} mod {1}", left, right);
-                    return left % right; // Остаток от деления
+                    if (right == 0) { throw new DivideByZeroException("Divide by 0"); };
+                    return left % right; 
 
                 default:
                     throw new Exception("Невідомий оператор у виразі.");

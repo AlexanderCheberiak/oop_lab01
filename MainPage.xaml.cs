@@ -1,4 +1,6 @@
-﻿namespace Lab01
+﻿using System.Diagnostics;
+
+namespace Lab01
 {
     public partial class MainPage : ContentPage
     {
@@ -103,17 +105,17 @@
         {
             if (e.Value)
             {
-                // Переключатель включен: вычисляем значения ячеек
+                // Перемикач увімкнено: обчислюємо значення комірок
                 CalculateAllCells();
             }
             else
             {
-                // Переключатель выключен: восстанавливаем формулы
+                // Перемикач вимкнений: відновлюємо формули
                 RestoreFormulas();
             }
         }
 
-        // Метод для вычисления значений всех ячеек
+        // Метод для обчислення значень усіх комірок
         private void CalculateAllCells()
         {
             var cellValues = GetAllCellValues();
@@ -126,13 +128,13 @@
                 {
                     try
                     {
-                        // Вычисляем формулу и показываем результат
+                        // Обчислюємо формулу і показуємо результат
                         var result = Calculator.Evaluate(cellContent, cellValues);
                         entry.Text = result.ToString();
                     }
                     catch
                     {
-                        entry.Text = cellContent; // Если ошибка, оставляем оригинальный текст
+                        entry.Text = "Помилка обчислення."; 
                     }
                 }
             }
@@ -140,7 +142,7 @@
 
         private void RestoreFormulas()
         {
-            // Восстанавливаем исходные формулы в каждой ячейке
+            // Відновлюємо вихідні формули в кожній комірці
             foreach (var entry in grid.Children.OfType<Entry>())
             {
                 var cellAddress = $"{GetColumnName(Grid.GetColumn(entry))}{Grid.GetRow(entry)}";
@@ -152,7 +154,7 @@
             }
         }
 
-        // Метод для извлечения всех значений ячеек и формирования словаря
+        // Метод для вилучення всіх значень комірок і формування словника
         private Dictionary<string, double> GetAllCellValues()
         {
             var cellValues = new Dictionary<string, double>();
@@ -196,7 +198,7 @@
                 }
                 catch
                 {
-                    entry.Text = cellContent;
+                    entry.Text = "Синтаксична помилка.";
                 }
             }
         }
@@ -219,10 +221,10 @@
             {
                 int lastRowIndex = grid.RowDefinitions.Count - 1;
                 grid.RowDefinitions.RemoveAt(lastRowIndex);
-                grid.Children.RemoveAt(lastRowIndex * (CountColumn + 1)); // Remove label
+                grid.Children.RemoveAt(lastRowIndex * (CountColumn + 1)); // Прибираємо Label
                 for (int col = 0; col < CountColumn; col++)
                 {
-                    grid.Children.RemoveAt((lastRowIndex * CountColumn) + col + 1); // Remove entry
+                    grid.Children.RemoveAt((lastRowIndex * CountColumn) + col + 1); // Прибираємо Entry
                 }
             }
             CountRow--;
@@ -276,7 +278,7 @@
             // Визначити номер нового стовпця (CountColumn + 1, оскільки починаємо з 0)
             int newColIndex = CountColumn + 1;
 
-            // Додати заголовок для нового стовпчика
+            // Додати заголовок для нового стовпця
             var headerLabel = new Label
             {
                 Text = GetColumnName(newColIndex),
