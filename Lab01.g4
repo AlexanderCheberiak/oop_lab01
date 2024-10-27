@@ -18,7 +18,7 @@ expression :
     | cellAddress                                         #CellAddressExpr
     ;
 
-cellAddress : COLUMN ROW; // например, "A1" или "B2"
+cellAddress : COLUMN ROW;
 
 /*
  * Lexer Rules

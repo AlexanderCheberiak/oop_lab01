@@ -3,38 +3,32 @@
   "WorkspaceRootPath": "D:\\Uni\\2nd year\\OOP\\Lab01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F38D131D-6CA7-48B1-A2F0-7D2EA0C95E58}|..\\Lab01.Tests\\Lab01.Tests.csproj|d:\\uni\\2nd year\\oop\\lab01.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\lab01.g4||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:lab01.g4||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\lab01visitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:lab01visitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\throwexceptionerrorlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:throwexceptionerrorlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F38D131D-6CA7-48B1-A2F0-7D2EA0C95E58}|..\\Lab01.Tests\\Lab01.Tests.csproj|d:\\uni\\2nd year\\oop\\lab01.tests\\lab01.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\lab01.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:lab01.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|D:\\Uni\\2nd year\\OOP\\Lab01\\Calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|solutionrelative:Calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|D:\\Uni\\2nd year\\OOP\\Lab01\\ThrowExceptionErrorListener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|solutionrelative:ThrowExceptionErrorListener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01Visitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95F308D3-D766-41FE-9CFB-BED3772A1826}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{95F308D3-D766-41FE-9CFB-BED3772A1826}|solutionrelative:Lab01Visitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|d:\\uni\\2nd year\\oop\\lab01\\lab01.g4||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{BC797FFC-A460-42EE-8ACF-475490393343}|Lab01.csproj|solutionrelative:lab01.g4||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Uni\\2nd year\\OOP\\Lab01\\ClassDiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ClassDiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,76 +38,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Lab01.csproj",
-              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.csproj",
-              "RelativeDocumentMoniker": "Lab01.csproj",
-              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.csproj",
-              "RelativeToolTip": "Lab01.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-27T18:43:14.673Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Lab01.Tests.csproj",
-              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01.Tests\\Lab01.Tests.csproj",
-              "RelativeDocumentMoniker": "..\\Lab01.Tests\\Lab01.Tests.csproj",
-              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01.Tests\\Lab01.Tests.csproj",
-              "RelativeToolTip": "..\\Lab01.Tests\\Lab01.Tests.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-27T18:42:51.143Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UnitTest1.cs",
-              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01.Tests\\UnitTest1.cs",
-              "RelativeDocumentMoniker": "..\\Lab01.Tests\\UnitTest1.cs",
-              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01.Tests\\UnitTest1.cs",
-              "RelativeToolTip": "..\\Lab01.Tests\\UnitTest1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T18:42:17.928Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Lab01.g4",
-              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.g4",
-              "RelativeDocumentMoniker": "Lab01.g4",
-              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.g4",
-              "RelativeToolTip": "Lab01.g4",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-24T15:23:00.932Z",
-              "EditorCaption": ""
+              "DocumentIndex": 6,
+              "Title": "ClassDiagram1.cd",
+              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\ClassDiagram1.cd",
+              "RelativeDocumentMoniker": "ClassDiagram1.cd",
+              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\ClassDiagram1.cd",
+              "RelativeToolTip": "ClassDiagram1.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2024-10-27T21:43:33.082Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "MainPage.xaml.cs",
+              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml.cs",
+              "RelativeToolTip": "MainPage.xaml.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAAAAAMEAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T14:49:54.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml",
+              "RelativeDocumentMoniker": "MainPage.xaml",
+              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml",
+              "RelativeToolTip": "MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-09T14:49:52.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Calculator.cs",
               "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\Calculator.cs",
               "RelativeDocumentMoniker": "Calculator.cs",
               "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\Calculator.cs",
               "RelativeToolTip": "Calculator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T15:40:10.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T15:40:10.668Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "Lab01Visitor.cs",
+              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01Visitor.cs",
+              "RelativeDocumentMoniker": "Lab01Visitor.cs",
+              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01Visitor.cs",
+              "RelativeToolTip": "Lab01Visitor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T15:36:26.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ThrowExceptionErrorListener.cs",
               "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\ThrowExceptionErrorListener.cs",
               "RelativeDocumentMoniker": "ThrowExceptionErrorListener.cs",
@@ -121,46 +109,19 @@
               "RelativeToolTip": "ThrowExceptionErrorListener.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T15:38:55.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T15:38:55.445Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Lab01Visitor.cs",
-              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01Visitor.cs",
-              "RelativeDocumentMoniker": "Lab01Visitor.cs",
-              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01Visitor.cs",
-              "RelativeToolTip": "Lab01Visitor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T15:36:26.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "MainPage.xaml.cs",
-              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml.cs",
-              "RelativeToolTip": "MainPage.xaml.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwAAAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T14:49:54.325Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml",
-              "RelativeDocumentMoniker": "MainPage.xaml",
-              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\MainPage.xaml",
-              "RelativeToolTip": "MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-09T14:49:52.669Z",
+              "DocumentIndex": 0,
+              "Title": "Lab01.g4",
+              "DocumentMoniker": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.g4",
+              "RelativeDocumentMoniker": "Lab01.g4",
+              "ToolTip": "D:\\Uni\\2nd year\\OOP\\Lab01\\Lab01.g4",
+              "RelativeToolTip": "Lab01.g4",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-24T15:23:00.932Z",
               "EditorCaption": ""
             }
           ]

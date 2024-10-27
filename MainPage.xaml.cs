@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace Lab01
+﻿namespace Lab01
 {
     public partial class MainPage : ContentPage
     {
